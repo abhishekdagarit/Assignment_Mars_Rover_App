@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-hover">
+    <tr>
+      <th>X axis</th>
+      <th>Y axis</th>
+      <th>Description</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td><%= @grid.x_axis %></td>
+      <td><%= @grid.y_axis %></td>
+      <td><%= @grid.description %></td>
+    </tr>
+  </tbody>
+</table>
+
+  <b>Shuttles:</b>
+<table class="table table-bordered">
+    <tr>
+      <th>Landing position</th>
+      <th>Target position</th>
+    </tr>
+  <tbody>
+    <% @grid.shuttles.each do |s| %>
+    <tr>
+
+      <td>
+      <%= link_to s.landing_x_axis, [s.grid, s] %>,<%= s.landing_y_axis %>
+      </td>
+      <td>
+      <%= link_to s.target_x_axis, [s.grid, s] %>,<%= s.target_y_axis %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_grid_path(@grid), :class => 'btn btn-mini' %> |
+<%= link_to 'Back', grids_path, :class => 'btn btn-mini' %>
+<%= link_to 'New Shuttle', new_grid_shuttle_path(@grid), :class => 'btn btn-primary' %>

@@ -1,0 +1,6 @@
+<h1>Editing shuttle</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@grid, @shuttle] %> |
+<%= link_to 'Back', grid_shuttles_path(@grid) %>

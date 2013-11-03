@@ -1,0 +1,11 @@
+<%= simple_form_for([@grid, @shuttle]) do |f| %>
+
+  <%= f.input :landing_x_axis %>
+  <%= f.input :landing_y_axis %>
+  <%= f.input :target_x_axis %>
+  <%= f.input :target_y_axis %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary'  %>
+  </div>
+<% end %>

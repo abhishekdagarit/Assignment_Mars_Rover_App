@@ -1,0 +1,8 @@
+class DropIndexForLengthAndBreadthToGrids < ActiveRecord::Migration
+  def up
+    drop_index :grids, [:length, :breadth]
+  end
+
+  def down
+  end
+end

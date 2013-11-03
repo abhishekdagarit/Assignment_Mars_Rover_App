@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NASA - Mars Mission 2012</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-image:url('/images/sky.jpg');">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/home/index">NASA - Mars Mission 2012</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Home", "/home/index" %></li>
+            <li><%= link_to "Report a bug" %></li>
+            <li><%= link_to "Launch a new rover", "/rovers/new" %></li>
+            <li><%= link_to "Get Help", "/grids/(self.id)" %></li>
+            <li><%= link_to "Version Information", "/version/index" %></li>
+	    <% if user_signed_in? %>
+	    Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <% else %>
+            <%= link_to "Sign up", new_user_registration_path %> |
+            <%= link_to "Login", new_user_session_path %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+    <a class="close" data-dismiss="alert">×</a>
+    <%= msg %>
+  </div>
+<% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="span7"><%= yield %></div>
+      <div class="span5">
+        <h2>Statement by the President on Curiosity Landing on Mars</h2>
+        <h5>THE WHITE HOUSE</h5>
+	<h5>Office of the Press Secretary</h5>
+        <p>August 6, 2012</p>
+	<p>Tonight, on the planet Mars, the United States of America made history.</p>
+	<p>The successful landing of Curiosity – the most sophisticated roving laboratory ever to land on another planet – marks an unprecedented feat of technology that will stand as a point of national pride far into the future. It proves that even the longest of odds are no match for our unique blend of ingenuity and determination.</p>
+	<p>Tonight’s success, delivered by NASA, parallels our major steps forward towards a vision for a new partnership with American companies to send American astronauts into space on American spacecraft. That partnership will save taxpayer dollars while allowing NASA to do what it has always done best – push the very boundaries of human knowledge. And tonight’s success reminds us that our preeminence – not just in space, but here on Earth – depends on continuing to invest wisely in the innovation, technology, and basic research that has always made our economy the envy of the world.</p>
+	<p>I congratulate and thank all the men and women of NASA who made this remarkable accomplishment a reality – and I eagerly await what Curiosity has yet to discover.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<%= simple_form_for(@grid) do |f| %>
+  <%= f.input :x_axis %>
+  <%= f.input :y_axis %>
+  <%= f.input :description, :rows => 4 %>  
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

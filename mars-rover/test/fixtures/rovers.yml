@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  landing_x_axis: 1
+  landing_y_axis: 1
+  target_x_axis: 1
+  target_y_axis: 1
+
+two:
+  landing_x_axis: 1
+  landing_y_axis: 1
+  target_x_axis: 1
+  target_y_axis: 1

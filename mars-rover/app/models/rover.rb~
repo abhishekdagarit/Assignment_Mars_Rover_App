@@ -1,0 +1,19 @@
+class Rover < ActiveRecord::Base
+  attr_accessible :landing_x_axis, :landing_y_axis, :target_x_axis, :target_y_axis
+
+
+  # check if the distance between the landing and target position more than 5 blocks
+  # the rover can only travel five blocks at 
+
+  validate :is_distance_more_than_five_blocks_x, :if => (target_x_axis.attributes - landing_x_axis.attributes) > 5
+  validate :is_distance_more_than_five_blocks_y, :if => "target_y_axis" - "landing_y_axis" > 5
+
+  def is_distance_more_than_five_blocks_x
+       errors.add(:landing_x_axis, "value or the target_x_axis has to be changed as the rover can only travel 5 blocks ar a time")
+  end
+
+  def is_distance_more_than_five_blocks_y
+       errors.add(:landing_y_axis, "value or the target_y_axis has to be changed as the rover can only travel 5 blocks ar a time")
+  end
+
+end

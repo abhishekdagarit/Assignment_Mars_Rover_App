@@ -1,0 +1,31 @@
+<h1>Listing shuttles</h1>
+
+<table>
+  <tr>
+    <th>Landing x axis</th>
+    <th>Landing y axis</th>
+    <th>Target x axis</th>
+    <th>Target y axis</th>
+    <th>Grid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shuttles.each do |shuttle| %>
+  <tr>
+    <td><%= shuttle.landing_x_axis %></td>
+    <td><%= shuttle.landing_y_axis %></td>
+    <td><%= shuttle.target_x_axis %></td>
+    <td><%= shuttle.target_y_axis %></td>
+    <td><%= shuttle.grid.x_axis %>,<%= shuttle.grid.y_axis %></td>
+    <td><%= link_to 'Show', [@grid, shuttle] %></td>
+    <td><%= link_to 'Edit', edit_grid_shuttle_path(@grid, shuttle) %></td>
+    <td><%= link_to 'Destroy', [@grid, shuttle], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shuttle', new_grid_shuttle_path %>

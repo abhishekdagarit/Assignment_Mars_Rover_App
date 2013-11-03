@@ -1,0 +1,8 @@
+class AddIndexForLengthAndBreadthToGrids < ActiveRecord::Migration
+  def up
+    add_index :grids, [:length, :breadth], unique: true
+  end
+  def down
+    drop_index :grids, [:length, :breadth]
+  end
+end

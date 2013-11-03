@@ -1,0 +1,27 @@
+<%= simple_form_for([@grid, @shuttle]) do |f| %>
+
+  <%= f.input :landing_x_axis %>
+  <%= f.input :landing_y_axis %>
+  <%= f.input :target_x_axis %>
+  <%= f.input :target_y_axis %>
+  <div class="field">
+    <%= f.label :landing_x_axis %><br />
+    <%= f.number_field :landing_x_axis %>
+  </div>
+  <div class="field">
+    <%= f.label :landing_y_axis %><br />
+    <%= f.number_field :landing_y_axis %>
+  </div>
+  <div class="field">
+    <%= f.label :target_x_axis %><br />
+    <%= f.number_field :target_x_axis %>
+  </div>
+  <div class="field">
+    <%= f.label :target_y_axis %><br />
+    <%= f.number_field :target_y_axis %>
+  </div>
+  <div class="field">
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

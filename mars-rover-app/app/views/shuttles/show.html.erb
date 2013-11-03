@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-hover">
+    <tr>
+      <th>Landing x axis</th>
+      <th>Landing y axis</th>
+      <th>Target x axis</th>
+      <th>Target y axis</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td><%= @shuttle.landing_x_axis %></td>
+      <td><%= @shuttle.landing_y_axis %></td>
+      <td><%= @shuttle.target_x_axis %></td>
+      <td><%= @shuttle.target_y_axis %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_grid_shuttle_path(@grid, @shuttle), :class => 'btn btn-mini' %> |
+<%= link_to 'Back', grid_shuttles_path(@grid), :class => 'btn btn-mini' %>
